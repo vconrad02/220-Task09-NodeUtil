@@ -8,8 +8,8 @@ public class RecursiveTraceMain {
         }
         else {
             int tr = tot(current.getNext());
-            tr = tr + current.getItem();
-            return tr;
+            int nt = tr + current.getItem();
+            return nt;
         }
     }
 
