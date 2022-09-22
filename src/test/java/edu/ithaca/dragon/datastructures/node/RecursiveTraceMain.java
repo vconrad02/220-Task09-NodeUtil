@@ -33,7 +33,7 @@ public class RecursiveTraceMain {
         int totAns = tot(example);
         System.out.println(totAns);
 
-        int totTAns = tot(example);
+        int totTAns = totT(example);
         System.out.println(totTAns);
     }
     
