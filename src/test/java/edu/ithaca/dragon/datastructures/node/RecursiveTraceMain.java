@@ -2,39 +2,39 @@ package edu.ithaca.dragon.datastructures.node;
 
 public class RecursiveTraceMain {
 
-    public static int tot(LinkedNode<Integer> current){
+    public static int total(LinkedNode<Integer> current){
         if (current == null){
             return 0;
         }
         else {
-            int tr = tot(current.getNext());
-            int nt = tr + current.getItem();
-            return nt;
+            int totalrecursions = total(current.getNext());
+            int numberTotal = totalrecursions + current.getItem();
+            return numberTotal;
         }
     }
 
-    public static int totT(LinkedNode<Integer> current, int tsf){
+    public static int totalTail(LinkedNode<Integer> current, int totalsumfunction){
         if (current == null){
-            return tsf;
+            return totalsumfunction;
         }
         else {
-            int nt = tsf + current.getItem();
-            return totT(current.getNext(), nt);
+            int numberTotal = totalsumfunction + current.getItem();
+            return totalTail(current.getNext(), numberTotal);
         }
     }
 
-    public static int totT(LinkedNode<Integer> current){
-        return totT(current, 0);
+    public static int totalTail(LinkedNode<Integer> current){
+        return totalTail(current, 0);
     }
 
     public static void main(String[] args){
         LinkedNode<Integer> example = new LinkedNode<>(1, new LinkedNode<>(2, new LinkedNode<>(3, new LinkedNode<>(4))));
 
-        int totAns = tot(example);
-        System.out.println(totAns);
+        int totalAnswer = total(example);
+        System.out.println(totalAnswer);
 
-        int totTAns = totT(example);
-        System.out.println(totTAns);
+        int totalTailAnswer = totalTail(example);
+        System.out.println(totalTailAnswer);
     }
     
 }
